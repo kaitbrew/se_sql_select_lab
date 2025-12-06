@@ -1,5 +1,5 @@
-# STEP 1A
-# Import SQL Library and Pandas
+import sqlite3
+import pandas as pd
 
 # STEP 1B
 # Connect to the database
