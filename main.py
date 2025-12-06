@@ -3,33 +3,53 @@ import pandas as pd
 
 conn = sqlite3.connect("data.sqlite")
 
-df_first_five = pd.read_sql("""
+df_first_five = pd.read_sql(
+    """
                             SELECT employeeNumber, lastName
                             FROM employees
-                            """,conn)
+                            """,
+    conn,
+)
 
 
-df_five_reverse = pd.read_sql("""
+df_five_reverse = pd.read_sql(
+    """
                               SELECT lastName, employeeNumber
                               FROM employees    
-                              """,conn)
+                              """,
+    conn,
+)
 
 
-df_alias = pd.read_sql("""
+df_alias = pd.read_sql(
+    """
                        SELECT lastName, employeeNumber AS ID
                        FROM employees
-                       """,conn)
+                       """,
+    conn,
+)
 
-'''# STEP 5
+# STEP 5
 # Replace None with your code
-df_executive = pd.read_sql("""
-                       """,conn)
+df_executive = pd.read_sql(
+    """
+    SELECT *,
+    CASE
+        WHEN jobTitle = 'President' OR jobTitle = 'VP Sales' OR jobTitle = 'VP Marketing'
+        THEN 'Executive'
+        ELSE 'Not Executive'
+    END AS role
+    FROM employees
+                       """,
+    conn,
+)
 
-# STEP 6
-# Replace None with your code
+
 df_name_length = pd.read_sql("""
+                             SELECT LENGTH(lastName) AS name_length
+                             FROM employees
                        """,conn)
-
+'''
 # STEP 7
 # Replace None with your code
 df_short_title = pd.read_sql("""
