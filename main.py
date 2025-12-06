@@ -3,7 +3,7 @@ import pandas as pd
 
 # STEP 1B
 # Connect to the database
-conn = None
+conn = sqlite3.connect("data.sqlite")
 
 
 # STEP 2
