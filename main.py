@@ -14,12 +14,13 @@ df_five_reverse = pd.read_sql("""
                               FROM employees    
                               """,conn)
 
-# STEP 4
-# Replace None with your code
+
 df_alias = pd.read_sql("""
+                       SELECT lastName, employeeNumber AS ID
+                       FROM employees
                        """,conn)
 
-# STEP 5
+'''# STEP 5
 # Replace None with your code
 df_executive = pd.read_sql("""
                        """,conn)
@@ -42,4 +43,4 @@ sum_total_price = pd.read_sql("""
 # STEP 9
 # Replace None with your code
 df_day_month_year = pd.read_sql("""
-                       """,conn)
+                       """,conn)'''
